@@ -1,0 +1,17 @@
+<button (click)='toCreate()' class="btn"  style="margin-left: 40px;margin-top: 30px;margin-bottom: 30px;">Image Create</button>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m4 l4" *ngFor='let image of images'>
+      <div class="card">
+        <div class="card-image">
+          <img src="http://localhost:3000/uploads/{{image.name}}" class="img">
+        </div>
+        <div class="card-action">
+          <button class="btn indigo" (click)='copyImage(image.name)'>Copy</button>
+          <button class="btn right red" (click)='delete(image._id)'>delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

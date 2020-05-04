@@ -7,6 +7,7 @@ import {LocalService} from '../sysgen/local.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  loading = false;
   cats;
   constructor(private http : LocalService) { }
 
@@ -14,7 +15,9 @@ export class HomeComponent implements OnInit {
     this.http.getAllCat().subscribe(
       response => {
         if(response.con){
+          this.loading = true;
           this.cats = response.msg;
+          this.loading = false;
         }
       },
       error => {

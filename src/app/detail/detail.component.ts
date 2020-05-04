@@ -11,6 +11,7 @@ import { repeat } from 'rxjs/operators';
 export class DetailComponent implements OnInit {
   id;
   products;
+  loading = true;
   constructor(private route:ActivatedRoute , private http:LocalService) {
     this.id =  route.snapshot.params['id'];
    }
@@ -19,8 +20,10 @@ export class DetailComponent implements OnInit {
     this.http.getAllProductById(this.id).subscribe(
       response =>{
         if(response.con){
+          this.loading;
           console.log(response.msg);
           this.products = response.msg;
+          this.loading = false;
         }else{
           console.log(response.msg);
         }

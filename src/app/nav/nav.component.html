@@ -1,28 +1,29 @@
 <nav>
   <div class="nav-wrapper container">
-    <a routerLink='' class="brand-logo">Logo</a>
+    <a routerLink='' class="brand-logo">One Market</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <a class="btn-small dropdown-trigger transparent" href="#!" data-target="dropdown2">
-        Member<i class="material-icons right">arrow_drop_down</i></a>
-        <ul id="dropdown2" class="dropdown-content">
-          <li><a href="#!">Login</a></li>
-          <li><a href="#!">Register</a></li>
-          <li><a href="#!">Logout</a></li>
-        </ul>
+      <li><a routerLink="auth" *ngIf='!isAuth'>Login</a></li>
+      <li><a routerLink="auth/register" *ngIf='!isAuth'>Register</a></li>
+      <li><a routerLink='/admin' *ngIf='isAuth'>Home</a></li>
+      <li><a routerLink='/admin/gallery' *ngIf='isAuth'>Gallery</a></li>
+      <li><a routerLink='/admin/post/create' *ngIf='isAuth'>Post Create</a></li>
+      <li><a routerLink='/admin/post/all' *ngIf='isAuth'>Post All</a></li>
+      <li><a class='btn' (click)='logout()' *ngIf='isAuth'>Logout</a></li>
     </ul>
   </div>
 </nav>
 
-
-<ul class="sidenav" id="mobile-demo">
+<ul class="sidenav center-align" id="mobile-demo">
   <li>
-    <a class="btn-small dropdown-trigger transparent black-text" href="#!" data-target="dropdown1">
-      Member<i class="material-icons right">arrow_drop_down</i></a>
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">Login</a></li>
-        <li><a href="#!">Register</a></li>
-        <li><a href="#!">Logout</a></li>
-      </ul>
+    <ul>
+      <li><a routerLink="auth" *ngIf='!isAuth'>Login</a></li>
+      <li><a routerLink="auth/register" *ngIf='!isAuth'>Register</a></li>
+      <li><a routerLink='/admin' *ngIf='isAuth'>Home</a></li>
+      <li><a routerLink='/admin/gallery' *ngIf='isAuth'>Gallery</a></li>
+      <li><a routerLink='/admin/post/create' *ngIf='isAuth'>Post Create</a></li>
+      <li><a routerLink='/admin/post/all' *ngIf='isAuth'>Post All</a></li>
+      <li><a class='btn' (click)='logout()' *ngIf='isAuth'>Logout</a></li>
+    </ul>
   <li>
 </ul>

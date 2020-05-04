@@ -1,0 +1,38 @@
+<div class="container" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col s0 m3 l3">
+
+    </div>
+    <form class="col s12 m6 l6" [formGroup]='loginForm' (ngSubmit)='getData(loginForm.value)'>
+      <h2 class="center-align" style="margin-bottom: 25px;">Login</h2>
+      <div class="row">
+        <div class="input-field col s12 ">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="email" formControlName="email">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 ">
+          <i class="material-icons prefix">vpn_key</i>
+          <input id="password" type="password" formControlName="password">
+          <label for="password">Password</label>
+        </div>
+        <div>
+
+        </div>
+        <div class="row">
+          <a routerLink="/auth/register">Not a Member yet..Register Here</a>
+          <button class="btn waves-effect waves-light right indigo" [disabled]='!loginForm.valid' type="submit">
+            Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  let pass = document.querySelector('#password')
+</script>

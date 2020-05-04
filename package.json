@@ -22,6 +22,7 @@
     "@types/jquery": "^3.3.36",
     "jquery": "^3.5.0",
     "materialize-css": "^1.0.0-rc.2",
+    "ngx-image-cropper": "^3.1.7",
     "rxjs": "~6.5.4",
     "scrollreveal": "^4.0.6",
     "tslib": "^1.10.0",

@@ -1,0 +1,65 @@
+<div class="container" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col s0 m3 l3">
+
+    </div>
+    <form class="col s12 m6 l6" [formGroup]='createForm' (ngSubmit)='createData(createForm.value)'>
+      <h2 class="center-align" style="margin-bottom: 25px;">Create Post</h2>
+
+      <div class="row center-align">
+
+      </div>
+
+      <div class="row">
+
+        <div class="input-field col s6">
+          <select id="cars" formControlName='cat_id'>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">cars</option>
+            <option value="2">bikes</option>
+            <option value="3">computers</option>
+            <option value="4">drinks</option>
+            <option value="5">foods</option>
+            <option value="6">furnitures</option>
+            <option value="7">phones</option>
+            <option value="8">hotels</option>
+            <option value="9">shirts</option>
+            <option value="10">templates</option>
+          </select>
+        </div>
+        <div class="input-field col s6">
+          <input id="first_name" type="text" formControlName="name">
+          <label for="first_name">Name</label>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="input-field col s6">
+          <input id="price" type="number" formControlName="price">
+          <label for="price">Price</label>
+        </div>
+
+        <div class="input-field col s6">
+          <input id="image" type="text" formControlName="image">
+          <label for="image">Image Link</label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea" type="text" class="materialize-textarea" formControlName="desc">
+            </textarea>
+          <label for="textarea">Description</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="btn waves-effect waves-light right indigo" type="submit">Create
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

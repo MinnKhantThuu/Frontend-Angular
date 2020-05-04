@@ -1,0 +1,15 @@
+<div class="btn file-field input-field" style="margin-top: 40px;margin-left: 40px;">
+  <span>Upload Image</span>
+  <input type="file" (change)="fileChangeEvent($event)" />
+</div>
+
+<image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+  [resizeToWidth]="128" format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+  (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+
+<img [src]="croppedImage" />
+
+<div class="row">
+  <button class="btn btn-primary" (click)="saveImage()" style="margin-left: 40px;margin-bottom: 30px;">Save</button>
+  <button (click)='toGallery()' class="btn"  style="margin-left: 40px;margin-bottom: 30px;">Gallery</button>
+</div>

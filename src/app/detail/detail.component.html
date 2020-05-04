@@ -6,7 +6,7 @@
           <img src="{{product.image}}" class="responsive-img img" >
         </div>
         <div class="card-content">
-          <span class="card-title red-text text-accent-4">{{product.price}}</span>
+          <span class="card-title red-text text-accent-4">{{product.name}}</span>
           <p class='truncate'>{{product.description}}</p>
         </div>
         <div class="card-action">
@@ -16,3 +16,5 @@
     </div>
   </div>
 </div>
+
+<app-loading  *ngIf='loading'></app-loading>
